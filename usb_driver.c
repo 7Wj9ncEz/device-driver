@@ -2,6 +2,9 @@
 #include <linux/kernel.h>
 #include <linux/usb.h>
 
+#define PENDRIVE_VENDOR_ID 0x13fe
+#define PENDRIVE_PRODUCT_ID 0x4100
+
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Igor Ribeiro, Renata Soares and Vitor Barbosa");
 MODULE_DESCRIPTION("USB Driver for Fundaments of Operational Systems project");
@@ -21,7 +24,7 @@ static void pen_disconnect(struct usb_interface *interface){
 // usb_device_id
 static struct usb_device_id pen_table[] = {
 	//0781:5406
-	{ USB_DEVICE(0x13fe, 0x4100) }, //information is obtained using "lsusb" at the command line
+	{ USB_DEVICE(PENDRIVE_VENDOR_ID, PENDRIVE_PRODUCT_ID) }, //information is obtained using "lsusb" at the command line
 	{} /* Terminating entry */
 };
 
