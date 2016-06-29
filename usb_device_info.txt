@@ -1,0 +1,11 @@
+T:  Bus=02 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  8 Spd=480  MxCh= 0
+D:  Ver= 2.00 Cls=00(>ifc ) Sub=00 Prot=00 MxPS=64 #Cfgs=  1
+P:  Vendor=0930 ProdID=6544 Rev= 1.00
+S:  Manufacturer=Kingston
+S:  Product=DT 101 G2       
+S:  SerialNumber=001372982D82C0B1556701D2
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=100mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS= 512 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS= 512 Ivl=31875us
+

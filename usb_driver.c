@@ -25,6 +25,7 @@ static void pen_disconnect(struct usb_interface *interface){
 static struct usb_device_id pen_table[] = {
 	//0781:5406
 	{ USB_DEVICE(PENDRIVE_VENDOR_ID, PENDRIVE_PRODUCT_ID) }, //information is obtained using "lsusb" at the command line
+    { USB_DEVICE(0x0930, 0x6544) },
 	{} /* Terminating entry */
 };
 
