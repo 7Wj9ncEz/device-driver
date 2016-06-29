@@ -19,8 +19,8 @@ static struct file_operations fops = {
     .read = char_read,
     .write = char_write,
     .open = char_open,
-    .close = char_close,
-}
+    .release = char_close,
+};
 
 static int __init char_init(void){
 	int ret = -1;
@@ -42,19 +42,40 @@ static void __exit char_exit(void){
 }
 
 static int char_open(struct inode *i, struct file *f){
+	opened_times++;
+	printk(KERN_ALERT "Device opened %d times\n", opened_times);
 
+	return 0;
 }
 
 static int char_close(struct inode *i, struct file *f){
-
+	printk(KERN_ALERT "Device closed\n");
+	return 0;
 }
 
-static int char_read(struct file *f, char *buffer, size_t length, loff_t *off){
+static ssize_t char_read(struct file *f, char *buffer, size_t length, loff_t *off){
+	short count = 0;
+	while(length && (message[message_position]!=0)){
+		put_user(message[message_position], buffer++);
+		count++;
+		length--;
+		message_position++;
+	}
 
+	return count;
 }
 
-static int char_write(struct file *f, const char *buffer, size_t length, loff_t *off){
+static ssize_t char_write(struct file *f, const char *buffer, size_t length, loff_t *off){
+	short ind = length-1;	
+	short count = 0;
+	memset(message, 0, 100);
+	message_position = 0;
+	while(length > 0){
+		message[count++] = buffer[ind--];
+		length--;
+	}
 
+	return count;
 }
 
 module_init(char_init);
