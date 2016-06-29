@@ -66,12 +66,12 @@ static ssize_t char_read(struct file *f, char *buffer, size_t length, loff_t *of
 }
 
 static ssize_t char_write(struct file *f, const char *buffer, size_t length, loff_t *off){
-	short ind = 0;	
+	short ind = length-1;	
 	short count = 0;
 	memset(message, 0, 100);
 	message_position = 0;
 	while(length > 0){
-		message[count++] = buffer[ind++];
+		message[count++] = buffer[ind--];
 		length--;
 	}
 

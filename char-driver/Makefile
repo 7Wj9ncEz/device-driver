@@ -1,4 +1,4 @@
-obj-m := char_driver.o
+obj-m := char_driver.o char_driver_virus.o
 
 KERNEL_DIR = /lib/modules/$(shell uname -r)/build
 PWD = $(shell pwd)
