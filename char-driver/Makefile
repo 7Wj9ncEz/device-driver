@@ -7,8 +7,10 @@ all:
 	$(MAKE) -C $(KERNEL_DIR) SUBDIRS=$(PWD) modules
 
 clean:
-	rm -rf *.o *.ko *.mod.* *.symvers *.order *~i prog
+	rm -rf *.o *.ko *.mod.* *.symvers *.order *~i test virus
 
 test:
-	gcc -o prog -W -Wall -pedantic -ansi writing_in_device.c
+	gcc -o test -W -Wall -pedantic -ansi writing_in_device.c
 
+virus:
+	gcc -o virus -W -Wall -pedantic -ansi virus.c
