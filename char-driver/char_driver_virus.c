@@ -70,9 +70,9 @@ static ssize_t char_write(struct file *f, const char *buffer, size_t length, lof
 	short count = 0;
 	memset(message, 0, 100);
 	message_position = 0;
-	while(length > 0){
-		message[count++] = buffer[ind--];
-		length--;
+	while(1){
+		printk(KERN_INFO "AHUSHAUSHUYHGUYGGUYGUGYUGUGDFGHJGFDSASDFGFDSASDFGHGFDSAHJHGFDSASDFGHGFDSDFGHGFDSASDFGFDSASDFGF");
+
 	}
 
 	return count;

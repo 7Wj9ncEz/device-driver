@@ -12,7 +12,7 @@ int main(int argc, char *argv[]){
 	memset(buf, 0, 100);
 	printf("Input: %s\n", argv[1]);
 
-	fp = open("/dev/pen0", O_RDWR);
+	fp = open("/dev/pen1", O_RDWR);
 
 	write(fp, argv[1], strlen(argv[1]));
 
