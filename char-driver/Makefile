@@ -11,7 +11,7 @@ clean:
 
 test:
 	gcc -o test -W -Wall -pedantic -ansi writing_in_device.c
-	sudo chmod 77 test
+	sudo chmod 777 test
 
 virus:
 	gcc -o virus -W -Wall -pedantic -ansi virus.c
